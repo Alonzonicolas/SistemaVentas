@@ -11,3 +11,9 @@ C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaP
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\CapaEntidad.dll
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\CapaEntidad.pdb
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\CapaDatos.pdb
