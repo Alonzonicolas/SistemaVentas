@@ -17,3 +17,11 @@ C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\CapaD
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\CapaEntidad.pdb
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\CapaNegocio.pdb
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmCategoria.resources
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmClientes.resources
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmCompras.resources
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmProducto.resources
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmProveedores.resources
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmReportes.resources
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmUsuarios.resources
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmVentas.resources
