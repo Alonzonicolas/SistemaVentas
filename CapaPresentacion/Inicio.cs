@@ -10,6 +10,9 @@ using System.Windows.Forms;
 using CapaEntidad;
 using FontAwesome.Sharp;
 
+using CapaNegocio;
+using System.Windows.Controls;
+
 namespace CapaPresentacion
 {
     public partial class Inicio : Form
@@ -39,6 +42,21 @@ namespace CapaPresentacion
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+
+            List<Permiso> listaPermisos = new CN_Permiso().Listar(usuarioActual.idUsuario);
+
+            foreach(IconMenuItem iconmenu in menu.Items)
+            {
+
+                bool encontrado = listaPermisos.Any(m => m.nombreMenu == iconmenu.Name);
+
+                if(encontrado == false)
+                {
+                    iconmenu.Visible = false;
+                } 
+
+            }
+
             lblUsuario.Text = usuarioActual.nombreCompleto;
         }
 
