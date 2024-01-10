@@ -1,25 +1,23 @@
 ﻿using CapaDatos;
-using CapaEntidad;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 using CapaDatos;
 using CapaEntidad;
 
 namespace CapaNegocio
 {
-    public class CN_Permiso
+    public class CN_Rol
     {
 
-        private CD_Permiso objcd_permiso = new CD_Permiso();
+        private CD_Rol objcd_rol = new CD_Rol();
 
-        public List<Permiso> Listar(int idUsuario)
+        public List<Rol> Listar()
         {
-            return objcd_permiso.Listar(idUsuario);
+            return objcd_rol.Listar();
         }
 
     }

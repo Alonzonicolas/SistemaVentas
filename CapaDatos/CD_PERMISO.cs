@@ -15,7 +15,7 @@ using System.Reflection;
 
 namespace CapaDatos
 {
-    public class CD_PERMISO
+    public class CD_Permiso
     {
             public List<Permiso> Listar(int idUsuario)
             {
