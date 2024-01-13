@@ -26,7 +26,7 @@ namespace CapaPresentacion
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             comboEstado.Items.Add(new OpcionCombo() { valor = 1, texto = "Activo" });
-            comboEstado.Items.Add(new OpcionCombo() { valor = 2, texto = "No activo" });
+            comboEstado.Items.Add(new OpcionCombo() { valor = 2, texto = "No Activo" });
             comboEstado.DisplayMember = "texto";
             comboEstado.ValueMember = "valor";
             comboEstado.SelectedIndex = 0;
@@ -53,6 +53,21 @@ namespace CapaPresentacion
             comboBusqueda.ValueMember = "valor";
             comboBusqueda.SelectedIndex = 0;
 
+
+            //MOSTRAR TODOS LOS USUARIOS
+            List<Usuario> listaUsuario = new CN_Usuario().Listar();
+
+            foreach (Usuario item in listaUsuario)
+            {
+                datagridviewData.Rows.Add(new object[] {"",item.idUsuario,item.documento,item.nombreCompleto,item.correo,item.clave,
+                    item.oRol.idRol,
+                    item.oRol.descripcion,
+                    item.estado == true ? 1 : 0,
+                    item.estado == true ? "Activo" : "No Activo"
+            });
+
+            }
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -69,6 +84,7 @@ namespace CapaPresentacion
 
         private void Limpiar()
         {
+            textIndice.Text = "-1";
             textId.Text = "0";
             textDocumento.Text = "";
             textNombreCompleto.Text = "";
@@ -83,5 +99,70 @@ namespace CapaPresentacion
         {
 
         }
+
+        private void datagridviewData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
+            if (e.RowIndex < 0)
+                return;
+
+            if(e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var ancho = Properties.Resources.check20.Width;
+                var alto = Properties.Resources.delete20.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - ancho) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - alto) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.check20, new Rectangle(x, y, ancho, alto));
+                e.Handled = true;
+            }
+
+        }
+
+        private void datagridviewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (datagridviewData.Columns[e.ColumnIndex].Name == "btnSeleccionar")
+            {
+                int indice = e.RowIndex;
+
+                if(indice >= 0)
+                {
+                    textIndice.Text = indice.ToString();
+                    textId.Text = datagridviewData.Rows[indice].Cells["Id"].Value.ToString();
+                    textDocumento.Text = datagridviewData.Rows[indice].Cells["Documento"].Value.ToString();
+                    textNombreCompleto.Text = datagridviewData.Rows[indice].Cells["NombreCompleto"].Value.ToString();
+                    textCorreo.Text = datagridviewData.Rows[indice].Cells["Correo"].Value.ToString();
+                    textClave.Text = datagridviewData.Rows[indice].Cells["Clave"].Value.ToString();
+                    textConfirmarClave.Text = datagridviewData.Rows[indice].Cells["Clave"].Value.ToString();
+
+
+                    foreach(OpcionCombo oc in comboRol.Items)
+                    {
+                        if( Convert.ToInt32(oc.valor) == Convert.ToInt32(datagridviewData.Rows[indice].Cells["IdRol"].Value))
+                        {
+                            int indiceCombo = comboRol.Items.IndexOf(oc);
+                            comboRol.SelectedIndex = indiceCombo;
+                            break;
+                        }
+                    }
+
+
+                    foreach (OpcionCombo oc in comboEstado.Items)
+                    {
+                        if (Convert.ToInt32(oc.valor) == Convert.ToInt32(datagridviewData.Rows[indice].Cells["EstadoValor"].Value))
+                        {
+                            int indiceCombo = comboEstado.Items.IndexOf(oc);
+                            comboEstado.SelectedIndex = indiceCombo;
+                            break;
+                        }
+                    }
+                }
+            }
+
+        }
+
     }
 }
