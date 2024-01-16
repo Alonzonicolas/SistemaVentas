@@ -62,10 +62,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.comboBusqueda = new System.Windows.Forms.ComboBox();
             this.textBusqueda = new System.Windows.Forms.TextBox();
-            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiarBuscador = new FontAwesome.Sharp.IconButton();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.textIndice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.datagridviewData)).BeginInit();
@@ -372,22 +372,22 @@
             this.textBusqueda.Size = new System.Drawing.Size(167, 20);
             this.textBusqueda.TabIndex = 24;
             // 
-            // btnLimpiar
+            // btnLimpiarBuscador
             // 
-            this.btnLimpiar.BackColor = System.Drawing.Color.White;
-            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiar.IconColor = System.Drawing.Color.Black;
-            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiar.IconSize = 18;
-            this.btnLimpiar.Location = new System.Drawing.Point(1000, 25);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(39, 23);
-            this.btnLimpiar.TabIndex = 26;
-            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiarBuscador.BackColor = System.Drawing.Color.White;
+            this.btnLimpiarBuscador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiarBuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimpiarBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarBuscador.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiarBuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiarBuscador.IconColor = System.Drawing.Color.Black;
+            this.btnLimpiarBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiarBuscador.IconSize = 18;
+            this.btnLimpiarBuscador.Location = new System.Drawing.Point(1000, 25);
+            this.btnLimpiarBuscador.Name = "btnLimpiarBuscador";
+            this.btnLimpiarBuscador.Size = new System.Drawing.Size(39, 23);
+            this.btnLimpiarBuscador.TabIndex = 26;
+            this.btnLimpiarBuscador.UseVisualStyleBackColor = false;
             // 
             // btnBuscar
             // 
@@ -427,25 +427,25 @@
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // btnEditar
+            // btnLimpiar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.btnEditar.IconColor = System.Drawing.Color.White;
-            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.IconSize = 16;
-            this.btnEditar.Location = new System.Drawing.Point(32, 429);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(188, 23);
-            this.btnEditar.TabIndex = 16;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
+            this.btnLimpiar.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.btnLimpiar.IconColor = System.Drawing.Color.White;
+            this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnLimpiar.IconSize = 18;
+            this.btnLimpiar.Location = new System.Drawing.Point(32, 429);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(188, 23);
+            this.btnLimpiar.TabIndex = 16;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
@@ -483,7 +483,7 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1181, 530);
             this.Controls.Add(this.textIndice);
-            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.btnLimpiarBuscador);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.textBusqueda);
             this.Controls.Add(this.comboBusqueda);
@@ -493,7 +493,7 @@
             this.Controls.Add(this.datagridviewData);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.comboEstado);
@@ -537,7 +537,7 @@
         private System.Windows.Forms.ComboBox comboEstado;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnGuardar;
-        private FontAwesome.Sharp.IconButton btnEditar;
+        private FontAwesome.Sharp.IconButton btnLimpiar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView datagridviewData;
@@ -546,7 +546,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBusqueda;
         private System.Windows.Forms.TextBox textBusqueda;
-        private FontAwesome.Sharp.IconButton btnLimpiar;
+        private FontAwesome.Sharp.IconButton btnLimpiarBuscador;
         private FontAwesome.Sharp.IconButton btnBuscar;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;

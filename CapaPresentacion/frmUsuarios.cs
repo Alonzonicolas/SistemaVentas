@@ -72,14 +72,33 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            datagridviewData.Rows.Add(new object[] {"",textId.Text,textDocumento.Text,textNombreCompleto.Text,textCorreo.Text,textClave.Text,
-                ((OpcionCombo)comboRol.SelectedItem).valor.ToString(),
-                ((OpcionCombo)comboRol.SelectedItem).texto.ToString(),
-                ((OpcionCombo)comboEstado.SelectedItem).valor.ToString(),
-                ((OpcionCombo)comboEstado.SelectedItem).texto.ToString()
-            });
+            string mensaje = string.Empty;
+
+            Usuario objUsuario = new Usuario()
+            {
+                idUsuario = Convert.ToInt32(textId.Text),
+                documento = textDocumento.Text,
+                nombreCompleto = textNombreCompleto.Text,
+                correo = textCorreo.Text,
+                clave = textClave.Text,
+                oRol = new Rol() { idRol = Convert.ToInt32(((OpcionCombo)comboRol.SelectedItem).valor) },
+                estado = Convert.ToInt32(((OpcionCombo)comboEstado.SelectedItem).valor) == 1 ? true : false
+            };
+
+            int idUsuarioGenerado = new CN_Usuario().Registrar(objUsuario, out mensaje);
+
+            if(idUsuarioGenerado != 0)
+            {
+                datagridviewData.Rows.Add(new object[] {"",idUsuarioGenerado,textDocumento.Text,textNombreCompleto.Text,textCorreo.Text,textClave.Text,
+                    ((OpcionCombo)comboRol.SelectedItem).valor.ToString(),
+                    ((OpcionCombo)comboRol.SelectedItem).texto.ToString(),
+                    ((OpcionCombo)comboEstado.SelectedItem).valor.ToString(),
+                    ((OpcionCombo)comboEstado.SelectedItem).texto.ToString()
+                });
+            }
 
             Limpiar();
+
         }
 
         private void Limpiar()
