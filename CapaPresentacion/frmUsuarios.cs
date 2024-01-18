@@ -149,10 +149,6 @@ namespace CapaPresentacion
             textDocumento.Select();
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void datagridviewData_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -218,5 +214,57 @@ namespace CapaPresentacion
 
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if(Convert.ToInt32(textId.Text) != 0)
+            {
+                if(MessageBox.Show("¿Desea eliminar el usuario?","Mensaje",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Usuario objUsuario = new Usuario()
+                    {
+                        idUsuario = Convert.ToInt32(textId.Text)
+                    };
+
+
+                    bool respuesta = new CN_Usuario().Eliminar(objUsuario, out mensaje);
+
+                    if(respuesta)
+                    {
+                        datagridviewData.Rows.RemoveAt(Convert.ToInt32(textIndice.Text));
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+            }
+        }
+
+
+        private void iconButton2_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((OpcionCombo)comboBusqueda.SelectedItem).valor.ToString();
+
+            if(datagridviewData.Rows.Count > 0 )
+            {
+                foreach(DataGridViewRow row in datagridviewData.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(textBusqueda.Text.Trim().ToUpper()))
+                        row.Visible = true;
+                    else
+                        row.Visible = false;
+                }
+            }
+        }
+
+        private void btnLimpiarBuscador_Click(object sender, EventArgs e)
+        {
+            textBusqueda.Text = "";
+            foreach(DataGridViewRow row in datagridviewData.Rows)
+            {
+                row.Visible = true;
+            }
+        }
     }
 }
