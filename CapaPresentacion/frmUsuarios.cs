@@ -85,19 +85,52 @@ namespace CapaPresentacion
                 estado = Convert.ToInt32(((OpcionCombo)comboEstado.SelectedItem).valor) == 1 ? true : false
             };
 
-            int idUsuarioGenerado = new CN_Usuario().Registrar(objUsuario, out mensaje);
 
-            if(idUsuarioGenerado != 0)
+            if(objUsuario.idUsuario == 0 )
             {
-                datagridviewData.Rows.Add(new object[] {"",idUsuarioGenerado,textDocumento.Text,textNombreCompleto.Text,textCorreo.Text,textClave.Text,
+                int idUsuarioGenerado = new CN_Usuario().Registrar(objUsuario, out mensaje);
+
+                if (idUsuarioGenerado != 0)
+                {
+                    datagridviewData.Rows.Add(new object[] {"",idUsuarioGenerado,textDocumento.Text,textNombreCompleto.Text,textCorreo.Text,textClave.Text,
                     ((OpcionCombo)comboRol.SelectedItem).valor.ToString(),
                     ((OpcionCombo)comboRol.SelectedItem).texto.ToString(),
                     ((OpcionCombo)comboEstado.SelectedItem).valor.ToString(),
                     ((OpcionCombo)comboEstado.SelectedItem).texto.ToString()
                 });
+
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
+            } else
+            {
+                bool resultado = new CN_Usuario().Editar(objUsuario, out mensaje);
+
+                if(resultado)
+                {
+                    DataGridViewRow row = datagridviewData.Rows[Convert.ToInt32(textIndice.Text)];
+                    row.Cells["Id"].Value = textId.Text;
+                    row.Cells["Documento"].Value = textDocumento.Text;
+                    row.Cells["NombreCOmpleto"].Value = textNombreCompleto.Text;
+                    row.Cells["Correo"].Value = textCorreo.Text;
+                    row.Cells["Clave"].Value = textClave.Text;
+                    row.Cells["IdRol"].Value = ((OpcionCombo)comboRol.SelectedItem).valor.ToString();
+                    row.Cells["Rol"].Value = ((OpcionCombo)comboRol.SelectedItem).texto.ToString();
+                    row.Cells["EstadoValor"].Value = ((OpcionCombo)comboEstado.SelectedItem).valor.ToString();
+                    row.Cells["Estado"].Value = ((OpcionCombo)comboEstado.SelectedItem).texto.ToString();
+
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(mensaje);
+                }
             }
 
-            Limpiar();
+
 
         }
 
@@ -112,6 +145,8 @@ namespace CapaPresentacion
             textConfirmarClave.Text = "";
             comboRol.SelectedIndex = 0;
             comboEstado.SelectedIndex = 0;
+
+            textDocumento.Select();
         }
 
         private void iconButton2_Click(object sender, EventArgs e)

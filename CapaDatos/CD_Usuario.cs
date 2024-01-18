@@ -80,7 +80,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdRol", obj.oRol.idRol);
                     cmd.Parameters.AddWithValue("Estado", obj.estado);
                     cmd.Parameters.Add("IdUsuarioResultado", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oConexion.Open();
@@ -120,7 +120,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("IdRol", obj.oRol.idRol);
                     cmd.Parameters.AddWithValue("Estado", obj.estado);
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     oConexion.Open();
