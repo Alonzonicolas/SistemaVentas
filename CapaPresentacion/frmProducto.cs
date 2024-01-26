@@ -12,7 +12,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClosedXML.Excel;
 
 namespace CapaPresentacion
 {
@@ -266,25 +265,25 @@ namespace CapaPresentacion
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            if(datagridviewData.Rows.Count < 1) {
-                MessageBox.Show("No hay datos para exportar","Mensaje",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            if (datagridviewData.Rows.Count < 1)
+            {
+                MessageBox.Show("No hay datos para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
                 DataTable dt = new DataTable();
 
-                foreach(DataGridViewColumn columna in datagridviewData.Columns)
+                foreach (DataGridViewColumn columna in datagridviewData.Columns)
                 {
-                    if(columna.HeaderText != "" && columna.Visible)
-                    {
+                    if (columna.HeaderText != "" && columna.Visible)
                         dt.Columns.Add(columna.HeaderText, typeof(string));
-                    }
+                }
 
-                    foreach (DataGridViewRow row in datagridviewData.Rows)
-                    {
-                        if (row.Visible)
-                            dt.Rows.Add(new object[]
-                            {
+                foreach (DataGridViewRow row in datagridviewData.Rows)
+                {
+                    if (row.Visible)
+                        dt.Rows.Add(new object[]
+                        {
                                 row.Cells[2].Value.ToString(),
                                 row.Cells[3].Value.ToString(),
                                 row.Cells[4].Value.ToString(),
@@ -293,29 +292,27 @@ namespace CapaPresentacion
                                 row.Cells[8].Value.ToString(),
                                 row.Cells[9].Value.ToString(),
                                 row.Cells[11].Value.ToString(),
-                            });
-                    }
+                        });
+                }
 
-                    SaveFileDialog saveFile = new SaveFileDialog();
-                    saveFile.FileName = string.Format("ReporteProducto_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
-                    saveFile.Filter = "Excel Files | *.xlsx";
+                SaveFileDialog saveFile = new SaveFileDialog();
+                saveFile.FileName = string.Format("ReporteProducto_{0}.xlsx", DateTime.Now.ToString("ddMMyyyyHHmmss"));
+                saveFile.Filter = "Excel Files | *.xlsx";
 
-                    if(saveFile.ShowDialog() == DialogResult.OK)
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    try
                     {
-                        try
-                        {
-                            XLWorkbook wb = new XLWorkbook();
-                            var hoja = wb.Worksheets.Add(dt, "Informe");
-                            hoja.ColumnsUsed().AdjustToContents();
-                            wb.SaveAs(saveFile.FileName);
-                            MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        catch
-                        {
-                            MessageBox.Show("Error al generar el reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
+                        XLWorkbook wb = new XLWorkbook();
+                        var hoja = wb.Worksheets.Add(dt, "Informe");
+                        hoja.ColumnsUsed().AdjustToContents();
+                        wb.SaveAs(saveFile.FileName);
+                        MessageBox.Show("Reporte Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
-
+                    catch
+                    {
+                        MessageBox.Show("Error al generar el reporte", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
 
             }

@@ -130,8 +130,6 @@ namespace CapaPresentacion
                 }
             }
 
-
-
         }
 
         private void Limpiar()
