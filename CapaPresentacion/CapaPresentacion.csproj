@@ -302,5 +302,8 @@
   <ItemGroup>
     <None Include="Resources\spreadsheet.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen_2024-02-19_192014196.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
