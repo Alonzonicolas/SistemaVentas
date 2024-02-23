@@ -48,3 +48,4 @@ C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\Syste
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmNegocio.resources
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProveedor.resources
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdProducto.resources
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleCompra.resources
