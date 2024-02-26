@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FontAwesome.Sharp.IconButton btnExportar;
+            FontAwesome.Sharp.IconButton btnDescargar;
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBusqueda = new System.Windows.Forms.TextBox();
@@ -55,11 +55,32 @@
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textMontoTotal = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            btnExportar = new FontAwesome.Sharp.IconButton();
+            btnDescargar = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // btnDescargar
+            // 
+            btnDescargar.BackColor = System.Drawing.Color.WhiteSmoke;
+            btnDescargar.Cursor = System.Windows.Forms.Cursors.Hand;
+            btnDescargar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            btnDescargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnDescargar.ForeColor = System.Drawing.Color.Black;
+            btnDescargar.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
+            btnDescargar.IconColor = System.Drawing.Color.Red;
+            btnDescargar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnDescargar.IconSize = 21;
+            btnDescargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            btnDescargar.Location = new System.Drawing.Point(703, 484);
+            btnDescargar.Name = "btnDescargar";
+            btnDescargar.Size = new System.Drawing.Size(119, 23);
+            btnDescargar.TabIndex = 57;
+            btnDescargar.Text = "Descargar PDF";
+            btnDescargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            btnDescargar.UseVisualStyleBackColor = false;
+            btnDescargar.Click += new System.EventHandler(this.btnDescargar_Click);
             // 
             // label1
             // 
@@ -311,32 +332,12 @@
             this.label12.TabIndex = 34;
             this.label12.Text = "Monto Total:";
             // 
-            // btnExportar
-            // 
-            btnExportar.BackColor = System.Drawing.Color.WhiteSmoke;
-            btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            btnExportar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btnExportar.ForeColor = System.Drawing.Color.Black;
-            btnExportar.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            btnExportar.IconColor = System.Drawing.Color.Red;
-            btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnExportar.IconSize = 21;
-            btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnExportar.Location = new System.Drawing.Point(703, 484);
-            btnExportar.Name = "btnExportar";
-            btnExportar.Size = new System.Drawing.Size(119, 23);
-            btnExportar.TabIndex = 57;
-            btnExportar.Text = "Descargar PDF";
-            btnExportar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            btnExportar.UseVisualStyleBackColor = false;
-            // 
             // frmDetalleCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 602);
-            this.Controls.Add(btnExportar);
+            this.Controls.Add(btnDescargar);
             this.Controls.Add(this.textMontoTotal);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dataGridView1);

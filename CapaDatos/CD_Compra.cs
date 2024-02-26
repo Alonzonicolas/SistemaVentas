@@ -113,7 +113,8 @@ namespace CapaDatos
                                 oProveedor = new Proveedor() { documento = dr["Documento"].ToString(), razonSocial = dr["RazonSocial"].ToString() },
                                 tipoDocumento = dr["TipoDocumento"].ToString(),
                                 montoTotal = Convert.ToDecimal(dr["MontoTotal"].ToString()),
-                                fechaRegistro = dr["FechaRegistro"].ToString()
+                                fechaRegistro = dr["FechaRegistro"].ToString(),
+                                numeroDocumento = dr["NumeroDocumento"].ToString(),
                             };
                         }
 
