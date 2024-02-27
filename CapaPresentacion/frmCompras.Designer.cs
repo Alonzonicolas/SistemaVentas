@@ -366,7 +366,7 @@
             this.Cantidad,
             this.SubTotal,
             this.btnEliminar});
-            this.dataGridView1.Location = new System.Drawing.Point(142, 278);
+            this.dataGridView1.Location = new System.Drawing.Point(133, 278);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(591, 216);
             this.dataGridView1.TabIndex = 26;
