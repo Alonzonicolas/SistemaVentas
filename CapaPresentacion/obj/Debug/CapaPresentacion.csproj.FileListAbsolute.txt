@@ -53,3 +53,4 @@ C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\Bounc
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\itextsharp.dll
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\itextsharp.xmlworker.dll
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\itextsharp.xml
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdCliente.resources

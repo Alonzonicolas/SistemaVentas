@@ -34,13 +34,6 @@
             this.btnAgregarProducto = new FontAwesome.Sharp.IconButton();
             this.btnRegistrar = new FontAwesome.Sharp.IconButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.textCantidad = new System.Windows.Forms.NumericUpDown();
             this.textIdProducto = new System.Windows.Forms.TextBox();
             this.textStock = new System.Windows.Forms.TextBox();
@@ -69,8 +62,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textCambio = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textMetodoPago = new System.Windows.Forms.TextBox();
+            this.textMontoPago = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textCantidad)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -119,6 +118,7 @@
             this.btnAgregarProducto.Text = "Agregar";
             this.btnAgregarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // btnRegistrar
             // 
@@ -144,7 +144,6 @@
             this.IdProducto,
             this.Producto,
             this.Precio,
-            this.Stock,
             this.Cantidad,
             this.SubTotal,
             this.btnEliminar});
@@ -152,48 +151,8 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(591, 216);
             this.dataGridView1.TabIndex = 35;
-            // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "IdProducto";
-            this.IdProducto.Name = "IdProducto";
-            this.IdProducto.Visible = false;
-            this.IdProducto.Width = 84;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.Width = 150;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Stock
-            // 
-            this.Stock.HeaderText = "Stock";
-            this.Stock.Name = "Stock";
-            this.Stock.Visible = false;
-            this.Stock.Width = 93;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.Name = "SubTotal";
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.HeaderText = "";
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.btnEliminar.Width = 25;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridView1_CellPainting);
             // 
             // textCantidad
             // 
@@ -238,6 +197,7 @@
             this.textPrecioProd.Name = "textPrecioProd";
             this.textPrecioProd.Size = new System.Drawing.Size(76, 20);
             this.textPrecioProd.TabIndex = 31;
+            this.textPrecioProd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textPrecioProd_KeyPress);
             // 
             // textProducto
             // 
@@ -406,6 +366,7 @@
             this.textCodProducto.Name = "textCodProducto";
             this.textCodProducto.Size = new System.Drawing.Size(118, 20);
             this.textCodProducto.TabIndex = 28;
+            this.textCodProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textCodProducto_KeyDown);
             // 
             // btnBuscarProducto
             // 
@@ -423,6 +384,7 @@
             this.btnBuscarProducto.Size = new System.Drawing.Size(32, 20);
             this.btnBuscarProducto.TabIndex = 27;
             this.btnBuscarProducto.UseVisualStyleBackColor = false;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // label11
             // 
@@ -486,12 +448,14 @@
             this.label13.TabIndex = 40;
             this.label13.Text = "Cambio:";
             // 
-            // textMetodoPago
+            // textMontoPago
             // 
-            this.textMetodoPago.Location = new System.Drawing.Point(796, 402);
-            this.textMetodoPago.Name = "textMetodoPago";
-            this.textMetodoPago.Size = new System.Drawing.Size(84, 20);
-            this.textMetodoPago.TabIndex = 43;
+            this.textMontoPago.Location = new System.Drawing.Point(796, 402);
+            this.textMontoPago.Name = "textMontoPago";
+            this.textMontoPago.Size = new System.Drawing.Size(84, 20);
+            this.textMontoPago.TabIndex = 43;
+            this.textMontoPago.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textMontoPago_KeyDown);
+            this.textMontoPago.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textMetodoPago_KeyPress);
             // 
             // label14
             // 
@@ -503,12 +467,47 @@
             this.label14.TabIndex = 42;
             this.label14.Text = "Paga con:";
             // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "IdProducto";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.Visible = false;
+            this.IdProducto.Width = 84;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.Width = 150;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.HeaderText = "";
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.btnEliminar.Width = 25;
+            // 
             // frmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1027, 585);
-            this.Controls.Add(this.textMetodoPago);
+            this.Controls.Add(this.textMontoPago);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textCambio);
             this.Controls.Add(this.label13);
@@ -571,16 +570,15 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textCambio;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textMontoPago;
+        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
         private System.Windows.Forms.DataGridViewButtonColumn btnEliminar;
-        private System.Windows.Forms.TextBox textCambio;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textMetodoPago;
-        private System.Windows.Forms.Label label14;
     }
 }
