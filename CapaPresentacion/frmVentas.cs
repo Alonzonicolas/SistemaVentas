@@ -142,18 +142,26 @@ namespace CapaPresentacion
 
             if (!producto_existe)
             {
-                dataGridView1.Rows.Add(new object[]
-                {
-                    textIdProducto.Text,
-                    textProducto.Text,
-                    precio.ToString("0.00"),
-                    textCantidad.Value.ToString(),
-                    (textCantidad.Value * precio).ToString("0.00")
-                });
+                bool respuesta = new CN_Venta().RestarStock(
+                    Convert.ToInt32(textIdProducto.Text),
+                    Convert.ToInt32(textCantidad.Value.ToString())
+                    );
 
-                calcularTotal();
-                limpiarProducto();
-                textCodProducto.Select();
+                if(respuesta)
+                {
+                    dataGridView1.Rows.Add(new object[]
+                    {
+                        textIdProducto.Text,
+                        textProducto.Text,
+                        precio.ToString("0.00"),
+                        textCantidad.Value.ToString(),
+                        (textCantidad.Value * precio).ToString("0.00")
+                    });
+
+                    calcularTotal();
+                    limpiarProducto();
+                    textCodProducto.Select();
+                }
             }
         }
 
@@ -208,8 +216,16 @@ namespace CapaPresentacion
 
                 if (indice >= 0)
                 {
-                    dataGridView1.Rows.RemoveAt(indice);
-                    calcularTotal();
+                    bool respuesta = new CN_Venta().SumarStock(
+                        Convert.ToInt32(dataGridView1.Rows[indice].Cells["IdProducto"].Value.ToString()),
+                        Convert.ToInt32(dataGridView1.Rows[indice].Cells["Cantidad"].Value.ToString())
+                    );
+
+                    if(respuesta)
+                    {
+                        dataGridView1.Rows.RemoveAt(indice);
+                        calcularTotal();
+                    }
                 }
             }
         }
