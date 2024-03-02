@@ -319,5 +319,86 @@ namespace CapaPresentacion
                 calcularCambio();
             }
         }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            if(textDocCliente.Text == "")
+            {
+                MessageBox.Show("Debe ingresar documento del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if(textNombreCliente.Text == "")
+            {
+                MessageBox.Show("Debe ingresar nombre del cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if(dataGridView1.Rows.Count < 1)
+            {
+                MessageBox.Show("Debe ingresar productos a la venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+
+            DataTable detalle_venta = new DataTable();
+
+            detalle_venta.Columns.Add("IdProducto", typeof(int));
+            detalle_venta.Columns.Add("PrecioVenta", typeof(decimal));
+            detalle_venta.Columns.Add("Cantidad", typeof(int));
+            detalle_venta.Columns.Add("SubTotal", typeof(decimal));
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                detalle_venta.Rows.Add(
+                    new object[]
+                    {
+                        row.Cells["IdProducto"].Value.ToString(),
+                        row.Cells["Precio"].Value.ToString(),
+                        row.Cells["Cantidad"].Value.ToString(),
+                        row.Cells["SubTotal"].Value.ToString()
+                    });
+            }
+
+            int idCorrelativo = new CN_Venta().ObtenerCorrelativo();
+            string numeroDocumento = string.Format("{0:00000}", idCorrelativo);
+            calcularCambio();
+
+            Venta oVenta = new Venta()
+            {
+                oUsuario = new Usuario() { idUsuario = _Usuario.idUsuario },
+                tipoDocumento = ((OpcionCombo)comboTipoDoc.SelectedItem).texto,
+                numeroDocumento = numeroDocumento,
+                documentoCliente = textDocCliente.Text,
+                nombreCliente = textNombreCliente.Text,
+                montoPago = Convert.ToDecimal(textMontoPago.Text),
+                montoCambio = Convert.ToDecimal(textCambio.Text),
+                montoTotal = Convert.ToDecimal(textTotalPagar.Text),
+            };
+
+            string mensaje = string.Empty;
+            bool respuesta = new CN_Venta().Registrar(oVenta, detalle_venta, out mensaje);
+
+            if(respuesta)
+            {
+                var result = MessageBox.Show("Número de venta generada:\n" + numeroDocumento + "\n\n¿Desea copiar al portapapeles?", "Mensaje",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (result == DialogResult.Yes)
+                    Clipboard.SetText(numeroDocumento);
+
+                textDocCliente.Text = "";
+                textNombreCliente.Text = "";
+                dataGridView1.Rows.Clear();
+                calcularTotal();
+                textMontoPago.Text = "";
+                textCambio.Text = "";
+            }
+            else
+            {
+                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+        }
     }
 }
