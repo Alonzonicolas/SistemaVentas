@@ -73,7 +73,7 @@
             btnDescargar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnDescargar.IconSize = 21;
             btnDescargar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            btnDescargar.Location = new System.Drawing.Point(703, 484);
+            btnDescargar.Location = new System.Drawing.Point(705, 457);
             btnDescargar.Name = "btnDescargar";
             btnDescargar.Size = new System.Drawing.Size(119, 23);
             btnDescargar.TabIndex = 57;
@@ -85,7 +85,7 @@
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(287, 52);
+            this.label1.Location = new System.Drawing.Point(289, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(553, 466);
             this.label1.TabIndex = 0;
@@ -95,7 +95,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(303, 66);
+            this.label2.Location = new System.Drawing.Point(305, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(164, 26);
             this.label2.TabIndex = 23;
@@ -103,7 +103,7 @@
             // 
             // textBusqueda
             // 
-            this.textBusqueda.Location = new System.Drawing.Point(537, 105);
+            this.textBusqueda.Location = new System.Drawing.Point(539, 78);
             this.textBusqueda.Name = "textBusqueda";
             this.textBusqueda.Size = new System.Drawing.Size(133, 20);
             this.textBusqueda.TabIndex = 28;
@@ -112,7 +112,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(426, 108);
+            this.label11.Location = new System.Drawing.Point(428, 81);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(105, 13);
             this.label11.TabIndex = 27;
@@ -129,7 +129,7 @@
             this.btnLimpiarBuscador.IconColor = System.Drawing.Color.Black;
             this.btnLimpiarBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiarBuscador.IconSize = 18;
-            this.btnLimpiarBuscador.Location = new System.Drawing.Point(752, 103);
+            this.btnLimpiarBuscador.Location = new System.Drawing.Point(754, 76);
             this.btnLimpiarBuscador.Name = "btnLimpiarBuscador";
             this.btnLimpiarBuscador.Size = new System.Drawing.Size(70, 23);
             this.btnLimpiarBuscador.TabIndex = 30;
@@ -149,7 +149,7 @@
             this.btnBuscar.IconColor = System.Drawing.Color.Black;
             this.btnBuscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBuscar.IconSize = 18;
-            this.btnBuscar.Location = new System.Drawing.Point(676, 103);
+            this.btnBuscar.Location = new System.Drawing.Point(678, 76);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(70, 23);
             this.btnBuscar.TabIndex = 29;
@@ -167,7 +167,7 @@
             this.groupBox1.Controls.Add(this.textFecha);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(298, 132);
+            this.groupBox1.Location = new System.Drawing.Point(300, 105);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(524, 74);
             this.groupBox1.TabIndex = 31;
@@ -230,7 +230,7 @@
             this.groupBox2.Controls.Add(this.textDocProveedor);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(298, 212);
+            this.groupBox2.Location = new System.Drawing.Point(300, 185);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(524, 74);
             this.groupBox2.TabIndex = 32;
@@ -288,7 +288,7 @@
             this.PrecioCompra,
             this.Cantidad,
             this.SubTotal});
-            this.dataGridView1.Location = new System.Drawing.Point(298, 292);
+            this.dataGridView1.Location = new System.Drawing.Point(300, 265);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(524, 186);
             this.dataGridView1.TabIndex = 33;
@@ -316,7 +316,7 @@
             // 
             // textMontoTotal
             // 
-            this.textMontoTotal.Location = new System.Drawing.Point(373, 486);
+            this.textMontoTotal.Location = new System.Drawing.Point(375, 459);
             this.textMontoTotal.Name = "textMontoTotal";
             this.textMontoTotal.Size = new System.Drawing.Size(84, 20);
             this.textMontoTotal.TabIndex = 35;
@@ -326,7 +326,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(304, 489);
+            this.label12.Location = new System.Drawing.Point(306, 462);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 13);
             this.label12.TabIndex = 34;
