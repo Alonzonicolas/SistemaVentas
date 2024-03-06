@@ -143,9 +143,8 @@ namespace CapaDatos
             {
                 try
                 {
-                    conexion.Open();
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select v.IdVenta,u.NombreCompleto,,");
+                    query.AppendLine("select v.IdVenta,u.NombreCompleto,");
                     query.AppendLine("v.DocumentoCliente,v.NombreCliente,");
                     query.AppendLine("v.TipoDocumento,v.NumeroDocumento,");
                     query.AppendLine("v.MontoPago,v.MontoCambio,v.MontoTotal,");
@@ -157,6 +156,8 @@ namespace CapaDatos
                     SqlCommand cmd = new SqlCommand(query.ToString(), conexion);
                     cmd.Parameters.AddWithValue("@numero", numero);
                     cmd.CommandType = CommandType.Text;
+
+                    conexion.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {

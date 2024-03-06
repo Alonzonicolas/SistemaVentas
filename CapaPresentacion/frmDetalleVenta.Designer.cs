@@ -31,6 +31,10 @@
             FontAwesome.Sharp.IconButton btnDescargar;
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textTipoDoc = new System.Windows.Forms.TextBox();
@@ -55,10 +59,6 @@
             this.textMontoCambio = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textMontoPago = new System.Windows.Forms.TextBox();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             btnDescargar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -84,6 +84,7 @@
             btnDescargar.Text = "Descargar PDF";
             btnDescargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             btnDescargar.UseVisualStyleBackColor = false;
+            btnDescargar.Click += new System.EventHandler(this.btnDescargar_Click);
             // 
             // label12
             // 
@@ -110,6 +111,27 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(524, 186);
             this.dataGridView1.TabIndex = 66;
+            // 
+            // Producto
+            // 
+            this.Producto.HeaderText = "Producto";
+            this.Producto.Name = "Producto";
+            this.Producto.Width = 150;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.Name = "SubTotal";
             // 
             // label6
             // 
@@ -349,27 +371,6 @@
             this.textMontoPago.Size = new System.Drawing.Size(48, 20);
             this.textMontoPago.TabIndex = 73;
             this.textMontoPago.Text = "0";
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.Width = 150;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.Name = "SubTotal";
             // 
             // frmDetalleVenta
             // 
