@@ -55,3 +55,4 @@ C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\itext
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\bin\Debug\itextsharp.xml
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.Modales.mdCliente.resources
 C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleVenta.resources
+C:\Users\Nicolás\source\repos\CapaPresentacion\CapaPresentacion\obj\Debug\CapaPresentacion.frmReporteCompras.resources
